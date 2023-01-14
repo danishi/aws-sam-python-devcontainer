@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+          "name": "DynamoDB import",
+          "type": "python",
+          "request": "launch",
+          "program": "app/main.py",
+          "console": "integratedTerminal",
+          "args": [
+            "--imp",
+            "-t",
+            "${input:table}",
+            "-f",
+            "${input:importFile}"
+          ],
+          "justMyCode": true,
+          "env": {
+            "PYTHONPATH": "${workspaceFolder}"
+          }
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+  "recommendations": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "njpwerner.autodocstring",
+    "alefragnani.bookmarks",
+    "usernamehw.errorlens",
+    "CoenraadS.bracket-pair-colorizer",
+    "sohamkamani.code-eol",
+    "streetsidesoftware.code-spell-checker",
+    "editorconfig.editorconfig",
+    "mhutchie.git-graph",
+    "eamodio.gitlens",
+    "oderwat.indent-rainbow",
+    "shd101wyy.markdown-preview-enhanced",
+    "christian-kohler.path-intellisense",
+    "redhat.vscode-yaml",
+    "visualstudioexptteam.vscodeintellicode",
+    "mechatroner.rainbow-csv",
+    "phplasma.csv-to-table",
+    "janisdd.vscode-edit-csv",
+    "devAdvice.serverlessconsole"
+  ]
+}
