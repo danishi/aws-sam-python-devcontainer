@@ -9,20 +9,8 @@ https://docs.aws.amazon.com/ja_jp/serverless-application-model/latest/developerg
 ### Build
 ```bash
 $ cd sam-app/
-$ sam build --use-container --profile YOUR_AWS_PROFILE
+$ sam build--profile YOUR_AWS_PROFILE
 ```
-
-TODO: build empty
-
-### Deploy
-```bash
-$ cd sam-app/
-$ sam deploy --guided --profile YOUR_AWS_PROFILE
-or
-$ sam deploy --stack-name sam-app --profile YOUR_AWS_PROFILE
-```
-
-TODO: deploy faild
 
 ### Local Testing
 
@@ -31,7 +19,15 @@ $ cd sam-app/
 $ sam local start-api --host 0.0.0.0 --container-host host.docker.internal --profile YOUR_AWS_PROFILE 
 ```
 
-TODO: 500 error
+TODO:not working
+
+### Deploy
+```bash
+$ cd sam-app/
+$ sam deploy --guided --profile YOUR_AWS_PROFILE
+or
+$ sam deploy --stack-name sam-app --profile YOUR_AWS_PROFILE
+```
 
 ### Delete
 ```bash

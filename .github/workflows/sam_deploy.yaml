@@ -1,0 +1,50 @@
+name: SAM deploy
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  deploy:
+    name: SAM deploy Python ${{ matrix.python-version }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      matrix:
+        python-version: ['3.9']
+        os: [ubuntu-latest]
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Checkout 🔔
+        uses: actions/checkout@v3
+
+      - name: Setup Python ${{ matrix.python-version }} 🔧
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Setup SAM 🔧
+        uses: aws-actions/setup-sam@v2
+
+      - name: Setup AWS 🔧
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ vars.AWS_IAM_ROLE_ARN }}
+          role-session-name: github-actions-${{ github.run_id }}
+          aws-region: ap-northeast-1
+
+      - name: SAM build 🔨
+        run: |
+          cd sam-app
+          sam build
+
+      - name: SAM deploy 🚀
+        run: |
+          cd sam-app
+          sam deploy
