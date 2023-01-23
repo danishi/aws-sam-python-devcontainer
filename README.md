@@ -9,7 +9,7 @@ https://docs.aws.amazon.com/ja_jp/serverless-application-model/latest/developerg
 ### Build
 ```bash
 $ cd sam-app/
-$ sam build--profile YOUR_AWS_PROFILE
+$ sam build --profile YOUR_AWS_PROFILE
 ```
 
 ### Local Testing
